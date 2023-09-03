@@ -1,10 +1,11 @@
-// Import the modules using ESM syntax and module URLs
+// @deno-types="npm:@types/express@^4"
 import express, { Express, Request, Response } from "npm:express@^4";
 import morgan from "npm:morgan@^1";
 import "npm:pug@^3";
+// @deno-types="npm:@types/entities@^1"
 import { encodeXML } from 'npm:entities@^1'; 
 
-const app = express();
+const app: Express = express();
 
 app.set('views', './views-lab6');
 app.set('view engine', 'pug');
