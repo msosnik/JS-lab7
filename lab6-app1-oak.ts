@@ -38,7 +38,9 @@ router.all('/submit', async (ctx: Context) => {
     name = queryParams.get('name') || '';
   } else {
     const requestBody = await ctx.request.body().value;
-    name = requestBody ? requestBody.name : '';
+    if (requestBody instanceof URLSearchParams) {
+        name = requestBody.get('name') || '';
+    }
   }
 
   console.log('---------------------------');
