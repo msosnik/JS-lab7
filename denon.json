@@ -1,0 +1,7 @@
+{
+    "scripts": {
+      "start": "deno run --unstable --allow-net --allow-env --allow-read app.ts"
+    },
+    "watch": ["app.ts"],
+    "quiet": true
+  }
