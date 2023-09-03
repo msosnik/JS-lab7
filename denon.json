@@ -1,6 +1,7 @@
 {
     "scripts": {
-      "start": "deno run --unstable --allow-net --allow-env --allow-read app.ts"
+      "start": "deno run --unstable --allow-net --allow-env --allow-read app.ts",
+      "start-lab6": "deno run --unstable --allow-net --allow-env --allow-read lab6-app1.ts"
     },
     "watch": ["app.ts"],
     "quiet": true
