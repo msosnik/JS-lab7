@@ -14,8 +14,8 @@ return text.replace(/[<>&'"]/g, function (char) {
   });
 }
 
-const app = new Application();
-const router = new Router();
+const app:Application = new Application();
+const router:Router = new Router();
 
 // Initialize Oak View Engine
 app.use(
@@ -34,7 +34,7 @@ router.all('/submit', async (ctx: Context) => {
   let name = '';
 
   if (ctx.request.method === 'GET') {
-    const queryParams = ctx.request.url.searchParams;
+    const queryParams:URLSearchParams = ctx.request.url.searchParams;
     name = queryParams.get('name') || '';
   } else {
     const requestBody = await ctx.request.body().value;
@@ -47,7 +47,7 @@ router.all('/submit', async (ctx: Context) => {
   console.log('\x1B[35mctx.request.url\x1B[0m =', ctx.request.url);
   console.log('\x1B[35mctx.request.body\x1B[0m  =', name);
 
-  const acceptHeader = ctx.request.headers.get('Accept');
+  const acceptHeader:string = ctx.request.headers.get('Accept');
   
   if (acceptHeader) {
     if (acceptHeader.includes('application/json')) {
